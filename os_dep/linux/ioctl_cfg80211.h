@@ -457,7 +457,8 @@ void rtw_cfg80211_deinit_rfkill(struct wiphy *wiphy);
 #endif
 
 #if CONFIG_IEEE80211_BAND_6GHZ && LINUX_VERSION_CODE < KERNEL_VERSION(5,4,0)
-#error "CONFIG_IEEE80211_BAND_6GHZ supported only on kernel versions 5.4.0 or newer"
+#undef  CONFIG_IEEE80211_BAND_6GHZ
+#define CONFIG_IEEE80211_BAND_6GHZ 0
 #endif
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0))
