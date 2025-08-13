@@ -1,5 +1,5 @@
 ccflags-y += $(USER_EXTRA_CFLAGS)
-ccflags-y += -Os
+ccflags-y += -O1
 #ccflags-y += -O3
 #ccflags-y += -Wall
 #ccflags-y += -Wextra
