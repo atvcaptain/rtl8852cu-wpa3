@@ -57,6 +57,37 @@ enum {
 	typedef	__kernel_ssize_t	SSIZE_T;
 	#define FIELD_OFFSET(s, field)	((SSIZE_T)&((s *)(0))->field)
 
+
+/* ensure kernel integer base types are visible early */
+#include <asm/types.h>
+#include <uapi/linux/types.h>
+
+/* Fallbacks: only if not provided by headers above */
+#ifndef __s8
+typedef signed char         __s8;
+#endif
+#ifndef __u8
+typedef unsigned char       __u8;
+#endif
+#ifndef __s16
+typedef short               __s16;
+#endif
+#ifndef __u16
+typedef unsigned short      __u16;
+#endif
+#ifndef __s32
+typedef int                 __s32;
+#endif
+#ifndef __u32
+typedef unsigned int        __u32;
+#endif
+#ifndef __s64
+typedef long long           __s64;
+#endif
+#ifndef __u64
+typedef unsigned long long  __u64;
+#endif
+
 #endif /*PLATFORM_LINUX*/
 
 
