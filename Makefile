@@ -1,5 +1,5 @@
 ccflags-y += $(USER_EXTRA_CFLAGS)
-ccflags-y += -O1
+ccflags-y += -Os
 #ccflags-y += -O3
 #ccflags-y += -Wall
 #ccflags-y += -Wextra
@@ -701,14 +701,8 @@ include $(src)/phl/phl.mk
 
 
 obj-$(CONFIG_RTL8852CU) := $(MODULE_NAME).o
-$(MODULE_NAME)-y = $(_OS_INTFS_FILES)
-$(MODULE_NAME)-y += $(_CORE_FILES)
-$(MODULE_NAME)-y += $(_PHL_FILES)
-$(MODULE_NAME)-y += $(_HAL_FILES)
-$(MODULE_NAME)-y += $(_HAL_MAC_FILES)
-$(MODULE_NAME)-y += $(_BTC_FILES)
-$(MODULE_NAME)-y += $(_HAL_IC_FILES)
-$(MODULE_NAME)-y += $(_HAL_RF_FILES)
+$(MODULE_NAME)-y = $(OBJS_COMMON)
+$(MODULE_NAME)-y += $(OBJS)
 
 ############# MEMORY MANAGMENT #############
 ifneq ($(CONFIG_RTKM), n)

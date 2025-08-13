@@ -148,4 +148,4 @@ ifeq ($(CONFIG_RTW_MBO), y)
 _CORE_FILES +=	core/rtw_mbo.o core/rtw_ft.o core/rtw_wnm.o
 endif
 
-OBJS += $(_OS_INTFS_FILES) $(_CORE_FILES)
+OBJS_COMMON += $(_OS_INTFS_FILES) $(_CORE_FILES)
